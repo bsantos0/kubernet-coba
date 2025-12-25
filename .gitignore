@@ -1,0 +1,21 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfplan
+.terraform/modules/
+.terraform/providers/
+.terraform/plugins/
+.terraform/environment
+.terraform/tfstate
+.terraform/tfstate.lock.info
+
+# Crash detection (TF >= 0.13)
+# crash.log
+
+# secrets
+*.rkt
