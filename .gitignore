@@ -19,3 +19,8 @@ crash.*.log
 
 # secrets
 *.rkt
+
+#ansible
+.vault_pass.txt
+*.retry
+.ansible/
