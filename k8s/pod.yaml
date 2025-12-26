@@ -1,0 +1,13 @@
+#coba membuat pods
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-pertama
+  labels:
+    tipe: webserver
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80
