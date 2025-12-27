@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-mysql-abadi     # Ganti nama biar beda
+  labels:
+    app: database-saya
+spec:
+  containers:
+  - name: mysql
+    image: mysql:5.7
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: mysql-pass
+            key: password
+    
+    # --- BAGIAN PENTING: MOUNTING ---
+    volumeMounts:
+    - name: penyimpanan-abadi
+      mountPath: /var/lib/mysql   # Ini lokasi default MySQL nyimpen data
+  
+  # --- DEFINISI VOLUME DARI PVC ---
+  volumes:
+  - name: penyimpanan-abadi
+    persistentVolumeClaim:
+      claimName: pvc-mysql-claim  # Sesuai nama PVC di langkah 1
