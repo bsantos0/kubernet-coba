@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-toko-baju
+spec:
+  ingressClassName: nginx      
+  rules:
+  - host: toko-budi.local      
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pintu-masuk-nginx  
+            port:
+              number: 80             

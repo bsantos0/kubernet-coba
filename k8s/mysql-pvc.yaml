@@ -17,6 +17,7 @@ spec:
     volumeMounts:
     - name: penyimpanan-abadi
       mountPath: /var/lib/mysql   
+  
   volumes:
   - name: penyimpanan-abadi
     persistentVolumeClaim:
